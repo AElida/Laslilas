@@ -1,0 +1,110 @@
+@charset "UTF-8";
+@media (max-width: 767px) {
+  body {
+    height: 100%; /* Expand to fit content */
+    min-height: auto; /*Remove the minimum height property to allow the element to collapse back */
+  }
+}
+h1 {
+  font-family: "Nunito", serif;
+  font-size: 2em;
+  color: #04250b;
+  text-align: center;
+  font-weight: bold;
+}
+
+header {
+  background-color: rgb(123, 103, 167);
+  font-family: "Nunito", serif;
+  font-size: 2em;
+  color: #04250b;
+  text-align: center;
+  font-weight: bold;
+}
+
+footer {
+  background-color: rgb(123, 103, 167);
+}
+
+/*.carrousel{
+
+    padding: 2px;
+    margin: 0;
+    justify-content: center;
+
+}*/
+.carousel-item img {
+  object-fit: cover; /* or contain, depending on desired behavior */
+  height: 400px; /* Adjust this value as needed */
+  width: 100%; /*Ensure image occupies the full width*/
+}
+
+@media (max-width: 768px) { /*Example breakpoint*/
+  .carousel-item img {
+    height: 300px; /* Adjust for smaller screens */
+  }
+}
+button {
+  background-color: #cde4d2;
+  color: #04250b;
+}
+
+.button:hoover {
+  background-color: rgb(115, 207, 115);
+}
+
+a {
+  color: #04250b;
+}
+
+.container {
+  background-color: #cde4d2;
+  border: 2px black solid;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: space-between;
+  border: 2px black solid;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+}
+
+.article {
+  background-color: #cde4d2;
+  width: 100px;
+  height: auto;
+  border: 2px black solid;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+}
+
+.imagenesNosotros {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Espaciado entre las imágenes y el texto */
+}
+
+.imagenesNosotros2 {
+  width: 100px; /* Ajustar tamaño de las imágenes */
+  height: auto;
+}
+
+.textoNosotros .frase {
+  font-family: "Nunito", serif;
+  color: #04250b;
+  text-align: center;
+}
+
+.planta {
+  width: 40%;
+  height: 50%;
+  border: 2px black solid;
+  margin: 10px;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,89 @@
+@media (max-width: 767px) {
+    body {
+      height: 100%; /* Expand to fit content */
+      min-height: auto; /*Remove the minimum height property to allow the element to collapse back */
+    }
+  }
+
+
+h1{
+    @include titulo;
+}
+header{
+    background-color: $colorPrincipal;
+    
+    @include titulo;
+}
+footer{
+    background-color: $colorPrincipal;
+}
+/*.carrousel{
+   
+    padding: 2px;
+    margin: 0;
+    justify-content: center;
+
+}*/
+
+.carousel-item img {
+    object-fit: cover; /* or contain, depending on desired behavior */
+    height: 400px; /* Adjust this value as needed */
+    width: 100%;    /*Ensure image occupies the full width*/
+}
+  
+@media (max-width: 768px) { /*Example breakpoint*/
+    .carousel-item img {
+        height: 300px; /* Adjust for smaller screens */
+    }
+}
+
+button{
+    background-color: $colorSecundario;
+    color: $colorTitulo;
+}
+.button:hoover{
+    background-color: $colorDetalle;
+}
+a{
+    color: $colorTitulo;
+}
+.container{
+    background-color: $colorSecundario;
+    border: 2px black solid;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-between;
+    @include nosotros;
+}
+.article{
+    background-color: $colorSecundario;
+    width: 100px;
+    height: auto;
+    @include nosotros;
+
+}
+
+
+.imagenesNosotros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre las imágenes y el texto */
+}
+
+.imagenesNosotros2 {
+    width: 100px; /* Ajustar tamaño de las imágenes */
+    height: auto;
+}
+
+.textoNosotros .frase {
+    font-family: $fuenteTitulo;
+    color: $colorTitulo;
+    text-align: center;
+}
+.planta{
+    @include planta;
+}
+    

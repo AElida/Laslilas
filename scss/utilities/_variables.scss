@@ -1,0 +1,29 @@
+$colorPrincipal:rgb(123, 103, 167);
+$colorSecundario: #cde4d2;
+$colorTitulo: #04250b;
+$colorCarrousel: white;
+$colorParrafo: rgb(66, 60, 60);
+$colorDetalle: rgb(115, 207, 115);
+$fuenteTitulo: "Nunito", serif;
+
+@mixin nosotros{
+    border: 2px black solid;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+
+}
+@mixin titulo{
+    font-family: $fuenteTitulo;
+    font-size: 2em;
+    color: $colorTitulo;
+    text-align: center;
+    font-weight: bold;
+}
+@mixin planta{
+    width: 40%;
+    height: 50%;
+    border: 2px black solid;
+    margin: 10px;
+    padding: 10px;
+}
