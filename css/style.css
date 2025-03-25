@@ -45,7 +45,7 @@ footer {
   }
 }
 button {
-  background-color: #cde4d2;
+  background-color: #e7c7e6;
   color: #04250b;
 }
 
@@ -58,10 +58,13 @@ a {
 }
 
 .container {
-  background-color: #cde4d2;
-  border: 2px black solid;
+  width: 100 vw;
+  margin-bottom: 60 px;
+  padding: 60PX 0 60PX 0;
+  background-color: #e7c7e6;
+  border: 2px;
   box-sizing: content-box;
-  display: flex;
+  display: block;
   flex-direction: row;
   flex-flow: wrap;
   justify-content: space-between;
@@ -72,13 +75,21 @@ a {
 }
 
 .article {
-  background-color: #cde4d2;
+  background-color: #e7c7e6;
   width: 100px;
   height: auto;
   border: 2px black solid;
   box-sizing: content-box;
   display: flex;
   justify-content: center;
+}
+
+h2 {
+  font-family: "Nunito", serif;
+  font-size: 2em;
+  color: #04250b;
+  text-align: center;
+  font-weight: bold;
 }
 
 .imagenesNosotros {
@@ -105,6 +116,18 @@ a {
   border: 2px black solid;
   margin: 10px;
   padding: 10px;
+}
+
+.nosotros {
+  background-color: #e7c7e6;
+}
+
+main {
+  background-color: #e7c7e6;
+  border: 2px black solid;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

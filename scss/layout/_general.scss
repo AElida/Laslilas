@@ -48,10 +48,13 @@ a{
     color: $colorTitulo;
 }
 .container{
+    width: 100 vw;
+    margin-bottom: 60 px;
+    padding: 60PX 0 60PX 0;
     background-color: $colorSecundario;
-    border: 2px black solid;
+    border: 2px ;
     box-sizing: content-box;
-    display: flex;
+    display: block;
     flex-direction: row;
     flex-flow: wrap;
     justify-content: space-between;
@@ -63,6 +66,9 @@ a{
     height: auto;
     @include nosotros;
 
+}
+h2{
+    @include titulo;
 }
 
 
@@ -86,4 +92,10 @@ a{
 .planta{
     @include planta;
 }
-    
+.nosotros{
+    background-color: $colorSecundario;
+} 
+main{
+    background-color: $colorSecundario;
+    @include nosotros;
+}
