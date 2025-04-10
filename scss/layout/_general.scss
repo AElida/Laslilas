@@ -9,21 +9,33 @@
 h1{
     @include titulo;
 }
+h2{
+    @include titulo;
+}
 header{
     background-color: $colorPrincipal;
     
     @include titulo;
 }
+.navbar .btn-outline-success {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaciado entre el ícono y el texto */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.navbar .badge {
+    font-size: 12px;
+    padding: 5px;
+}
 footer{
     background-color: $colorPrincipal;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
-/*.carrousel{
-   
-    padding: 2px;
-    margin: 0;
-    justify-content: center;
 
-}*/
 
 .carousel-item img {
     object-fit: cover; /* or contain, depending on desired behavior */
@@ -37,7 +49,7 @@ footer{
     }
 }
 
-button{
+.button{
     background-color: $colorSecundario;
     color: $colorTitulo;
 }
@@ -47,55 +59,164 @@ button{
 a{
     color: $colorTitulo;
 }
-.container{
-    width: 100 vw;
-    margin-bottom: 60 px;
-    padding: 60PX 0 60PX 0;
+.main {
+    margin: 0; /* Sin márgenes */
+    padding: 0  0 20px 0; 
+    width: 100vw; /* Ocupa todo el ancho de la pantalla */
+    
+}
+
+.container {
+    background-color: $colorSecundario; /* Fondo opcional */
+    display: flex; /* Activa Flexbox */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+    justify-content: space-evenly; /* Espaciado uniforme entre las tarjetas */
+    gap: 20px; /* Espaciado entre las tarjetas */
+    padding: 20px; /* Espaciado interno */
+    width: 100vw; /* Ocupa todo el ancho del contenedor */ 
+    box-sizing: border-box; /* Incluye padding en el tamaño total */
+}
+
+.card {
+    width: calc(33.33% - 20px); /* Tres columnas con espacio entre ellas */
+    max-width: 300px; /* Tamaño máximo para las tarjetas */
+    margin: 0 auto; /* Centra las tarjetas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+.card img {
+    width: 100%; /* Imagen ocupa todo el ancho de la tarjeta */
+    height: auto; /* Mantiene la proporción */
+}
+
+.btn-primary{
     background-color: $colorSecundario;
-    border: 2px ;
-    box-sizing: content-box;
-    display: block;
-    flex-direction: row;
-    flex-flow: wrap;
-    justify-content: space-between;
-    @include nosotros;
+    color: $colorTitulo;
+    border-radius: 5px ;
+    border-color: $colorDetalle ;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-.article{
-    background-color: $colorSecundario;
-    width: 100px;
-    height: auto;
-    @include nosotros;
-
-}
-h2{
-    @include titulo;
+.btn-primary:hover{
+    background-color: $colorDetalle;
+    border-color: $colorDetalle;
 }
 
+input[type="submit"] {
+    background-color:$colorDetalle; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    border-color: $colorDetalle;
+    font-family: $fuenteTitulo;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Animación suave */
+}
 
+input[type="submit"]:hover {
+    background-color: $colorPrincipal; /* Color al pasar el mouse */
+}
+
+.nosotros{
+    background-color: $colorSecundario; /* Fondo opcional */
+    display: flex; /* Activa Flexbox */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+    justify-content: space-evenly; /* Espaciado uniforme entre las tarjetas */
+    /*gap: 20px;*/ /* Espaciado entre las tarjetas */
+    padding: 0 20 20px 0; /* Espaciado interno */
+    margin: 0 0 20px 0;
+    /*width: 100vw; /* Ocupa todo el ancho del contenedor */
+    box-sizing: border-box; /* Incluye padding en el tamaño total */
+}
 .imagenesNosotros {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   
+    display: flex; /* Organiza las imágenes y el texto en una fila */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-between; /* Espacia los elementos uniformemente */
+    margin: 10px;
     gap: 20px; /* Espaciado entre las imágenes y el texto */
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
 }
 
 .imagenesNosotros2 {
-    width: 100px; /* Ajustar tamaño de las imágenes */
+    margin: 10px 30PX;
+    padding: 20px 0;
+    width: 30%; /* Ajustar tamaño de las imágenes */
     height: auto;
+    display: flex; /* Asegura que las imágenes se alineen correctamente */
 }
 
 .textoNosotros .frase {
+    width: 50%; /* Ajusta el ancho del texto */
+    height: auto;
+    margin: 0; /* Elimina márgenes innecesarios */
+    padding: 30px;
     font-family: $fuenteTitulo;
     color: $colorTitulo;
-    text-align: center;
+    text-align: center; /* Centra el texto */
 }
-.planta{
-    @include planta;
+
+
+
+.contacto-container {
+    background-color: $colorSecundario; /* Fondo opcional */
+    display: flex; /* Organiza los elementos en una fila */
+    justify-content: space-between; /* Espaciado uniforme entre los elementos */
+    align-items: flex-start; /* Alinea los elementos al inicio */
+    gap: 20px; /* Espaciado entre el mapa y el formulario */
+    padding: 20px; /* Espaciado interno */
+    margin: 0 0 20px 0; /* Margen inferior */
+    width: 100vw; /* Ocupa todo el ancho del contenedor */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
 }
-.nosotros{
-    background-color: $colorSecundario;
-} 
-main{
-    background-color: $colorSecundario;
-    @include nosotros;
+
+.direccion-mapa {
+    flex: 1; /* Ocupa el mismo espacio que el formulario */
+    max-width: 50%; /* Limita el ancho máximo */
+}
+
+.formulario-contacto {
+    flex: 1; /* Ocupa el mismo espacio que el mapa */
+    max-width: 50%; /* Limita el ancho máximo */
+}
+
+form ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0;
+}
+
+form li {
+    margin-bottom: 15px; /* Espaciado entre los campos */
+}
+
+form label {
+    display: block; /* Coloca las etiquetas encima de los campos */
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 10px;
+    border: 1px solid $colorDetalle; /* Borde del campo */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    background-color: rgba(244, 228, 236, 0.922); /* Color del botón */
+    color: $colorTitulo; /* Color del texto */
+    font-family: $fuenteTitulo;
+    border: 1px solid $colorDetalle; /* Borde del botón */
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color:$colorDetalle; /* Color al pasar el mouse */
 }
