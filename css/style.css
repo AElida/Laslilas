@@ -136,45 +136,69 @@ input[type=submit]:hover {
   background-color: rgb(123, 103, 167); /* Color al pasar el mouse */
 }
 
-.nosotros {
+form input:focus, form textarea:focus {
+  outline: 2px solid rgb(123, 103, 167); /* Resalta el campo con un borde */
+  outline-offset: 2px; /* Espaciado entre el borde y el campo */
+  background-color: rgb(246.3, 234.7, 245.9375); /* Fondo más claro */
+}
+
+form input[type=submit]:focus {
+  outline: 2px solid rgb(123, 103, 167); /* Resalta el botón con un borde */
+  outline-offset: 2px; /* Espaciado entre el borde y el botón */
+  background-color: rgba(229.2368421053, 191.7631578947, 210.5, 0.922); /* Fondo más oscuro */
+}
+
+/* Nosotros */
+.nosotros-grid {
   background-color: #e7c7e6; /* Fondo opcional */
-  display: flex; /* Activa Flexbox */
-  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
-  justify-content: space-evenly; /* Espaciado uniforme entre las tarjetas */
-  /*gap: 20px;*/ /* Espaciado entre las tarjetas */
-  padding: 0 20 20px 0; /* Espaciado interno */
-  margin: 0 0 20px 0;
-  /*width: 100vw; /* Ocupa todo el ancho del contenedor */
-  box-sizing: border-box; /* Incluye padding en el tamaño total */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas adaptables */
+  gap: 2rem; /* Espaciado entre las tarjetas */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  justify-items: center; /* Centra las tarjetas horizontalmente */
+  align-items: start; /* Alinea las tarjetas al inicio verticalmente */
+  padding: 20px;
 }
 
-.imagenesNosotros {
-  display: flex; /* Organiza las imágenes y el texto en una fila */
+.nosotros-card {
+  background-color: #e7c7e6; /* Fondo opcional */
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Imagen y texto en dos columnas */
+  gap: 1.5rem; /* Espaciado entre columnas */
   align-items: center; /* Centra verticalmente los elementos */
-  justify-content: space-between; /* Espacia los elementos uniformemente */
-  margin: 10px;
-  gap: 20px; /* Espaciado entre las imágenes y el texto */
-  width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
 }
 
-.imagenesNosotros2 {
-  margin: 10px 30PX;
-  padding: 20px 0;
-  width: 30%; /* Ajustar tamaño de las imágenes */
+.imagen {
+  width: 100%;
   height: auto;
-  display: flex; /* Asegura que las imágenes se alineen correctamente */
+  max-width: 250px; /* Tamaño máximo de la imagen */
+  border-radius: 8px; /* Bordes redondeados */
 }
 
-.textoNosotros .frase {
-  width: 50%; /* Ajusta el ancho del texto */
-  height: auto;
-  margin: 0; /* Elimina márgenes innecesarios */
-  padding: 30px;
+.frase {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  line-height: 1.8;
   font-family: "Nunito", serif;
-  color: #04250b;
-  text-align: center; /* Centra el texto */
+  color: rgb(66, 60, 60);
 }
 
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .card-content {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+  }
+  .imagen {
+    max-width: 100%; /* Imagen ocupa todo el ancho disponible */
+  }
+}
+/* Contacto */
 .contacto-container {
   background-color: #e7c7e6; /* Fondo opcional */
   display: flex; /* Organiza los elementos en una fila */
@@ -182,7 +206,7 @@ input[type=submit]:hover {
   align-items: flex-start; /* Alinea los elementos al inicio */
   gap: 20px; /* Espaciado entre el mapa y el formulario */
   padding: 20px; /* Espaciado interno */
-  margin: 0 0 20px 0; /* Margen inferior */
+  margin: 0 0 25px 0; /* Margen inferior */
   width: 100vw; /* Ocupa todo el ancho del contenedor */
   flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
 }
@@ -232,6 +256,59 @@ form input[type=submit] {
 
 form input[type=submit]:hover {
   background-color: rgb(211, 97, 192); /* Color al pasar el mouse */
+}
+
+/* Estilos para dispositivos móviles (pantallas pequeñas) */
+@media (max-width: 576px) {
+  .container {
+    flex-direction: column; /* Cambia a una sola columna */
+    gap: 10px; /* Reduce el espaciado */
+  }
+  .card {
+    width: 100%; /* Ocupa todo el ancho */
+    max-width: none; /* Sin límite de ancho */
+  }
+  .contacto-container {
+    flex-direction: column; /* Cambia a una sola columna */
+    gap: 10px; /* Reduce el espaciado */
+  }
+  .direccion-mapa, .formulario-contacto {
+    max-width: 100%; /* Ocupa todo el ancho */
+  }
+}
+/* Estilos para tabletas (pantallas medianas) */
+@media (min-width: 577px) and (max-width: 992px) {
+  .container {
+    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+    gap: 15px; /* Ajusta el espaciado */
+  }
+  .card {
+    width: calc(50% - 15px); /* Dos columnas */
+  }
+  .contacto-container {
+    flex-wrap: wrap; /* Ajusta los elementos */
+    gap: 15px; /* Ajusta el espaciado */
+  }
+  .direccion-mapa, .formulario-contacto {
+    max-width: 48%; /* Ocupa casi la mitad del ancho */
+  }
+}
+/* Estilos para laptops (pantallas grandes) */
+@media (min-width: 993px) {
+  .container {
+    flex-wrap: wrap; /* Mantiene el ajuste */
+    gap: 20px; /* Espaciado estándar */
+  }
+  .card {
+    width: calc(33.33% - 20px); /* Tres columnas */
+  }
+  .contacto-container {
+    flex-wrap: nowrap; /* Elementos en una fila */
+    gap: 20px; /* Espaciado estándar */
+  }
+  .direccion-mapa, .formulario-contacto {
+    max-width: 50%; /* Ocupa la mitad del ancho */
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
